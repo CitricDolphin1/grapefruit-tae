@@ -52,9 +52,13 @@ If all four criteria are met, verification passes and the selected action is ret
 In addition to the standard command parser, a completely different parser called the **agressive parser** may be used by changing the parser mode (see below). **The aggressive parser will be minimally maintained and may not support engine features added after the initial release.** As such, its use is not generally recommended. The aggressive parser was a rough first attempt at the normal parser, and is only retained because it has different properties which may be desirable in some situations:
 
 +More likely to select an action
+
 +Less picky about syntax
+
 -Creates more false positives
+
 -Can behave unexpectedly when multiple actions are referenced in a single command
+
 ~Unconditionally favors verbs, even when unrelated nouns are specified
 
 The return behavior is the same for the aggressive parser as it is for the normal parser -- it returns the ID of the selected action (not the action itself) when successful, and "none" when it fails. Upon failure, it will print the generic failure message to the screen.
