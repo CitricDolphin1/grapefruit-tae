@@ -22,7 +22,9 @@ No need to modify the engine itself.
 
 ## Dependencies
 **Python 3.7 or higher.** Parts of this program rely on dictionaries to maintain insertion order, which is specified in 3.7+ but only considered an implementation detail in older verions. *Some* implementations of 3.6 and earlier may work (including the official binary), but it is not guaranteed.
+
 **sys**
+
 **json**
 
 ---
