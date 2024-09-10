@@ -16,13 +16,21 @@ To help quickly test new actions, these files will be rebuilt from scratch on ev
 
 ## Debugging commands are enabled
 While dev mode is enabled, a handful of special commands may be used to help quickly test certain parts of your game.
+
 -warp "room_id": Immediately warp to the room with the id "room_id"
+
 -setflag "flag": Set a flag with the name "flag"
+
 -delflag "flag": Delete the flag with the name "flag" if it exists
+
 -setitem "item": Add an item with the name "item" to the inventory
+
 -delitem "item": Remove one item with the name "item" from the inventory, if it exists.
+
 -undo "actionid": If an non-repeatable action with the id "actionid" has already been performed, this command will allow it to be performed again.
+
 -flags: Display all flags that have been set.
+
 -validate: Detect and list global actions, invalid or unused rooms, unobtainable items, unused or unobtainable flags, and unreachable conversation branches. **It's a good idea to validate at least once before releasing your game.**
 
 ## Parsing is logged verbosely
