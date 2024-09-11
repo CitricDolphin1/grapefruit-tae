@@ -82,6 +82,7 @@ That's it! Your game will now be running and accepting commands.
 ---
 
 If you're not sure where to go from here, I'd recommend reading the following docs in this order:
+
 -actions
 
 -inventory and flags
