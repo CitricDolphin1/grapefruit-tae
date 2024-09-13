@@ -37,8 +37,5 @@ See the documentation to get started. There's also a quick-and-dirty demo includ
 
 ---
 
-## LICENSE
-This program is Copyright (c) Alex Musick, 2024, and is licened for public use under the GNU GPL.
-
 ## Why "Grapefruit?"
 I like citrus :)
