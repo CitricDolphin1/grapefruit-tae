@@ -74,3 +74,50 @@ If enforce is True and you have not specified any verbs, then your action will b
 **repeat:** Boolean (True by default). If True, the action may be performed more than once. If False, the action can only be performed once.
 
 **repeat_message:** A string to display if the player attemps to repeat an action where repeat == False. (Will not trigger the fail callback; see Callbacks)
+
+## Bulk Definition
+
+Sometimes, you may want to quickly create a lot of trivial, unimportant actions simply to anticipate the player's choices and provide feedback. For this, you can use the "bulk" method.
+
+To do this, simply use the grapefruit.bulk method with the following POSITIONAL parameters:
+
+**noun:** A string representing the noun you want the actions to be associated with. If you don't want the actions to have any associated nouns, then use an empty string ("").
+
+**rooms:** A list of the room IDs that the actions should be allowed in. If you want to allow the actions in every room, use an empty list ([]).
+
+**args:** An indefinite number of lists formatted as follows:
+
+[["list","of","verbs","goes","here"], "Success message goes here."]
+
+For every argument given, one action will be created with the id of "BULK_{noun}_{first_verb}." It will be repeatable, have no flag or item conditions, and not set any flags or items.
+
+For example, this code using bulk definition:
+
+```python
+grapefruit.bulk("apple", ["example_room"],
+  [["bite","chomp"],"You take a bite out of the apple."],
+  [["smell","sniff"],"The apple smells sweet."]
+)
+```
+
+...is equivalent to this code using manual definitions:
+
+```python
+grapefruit.action(id="BULK_apple_bite",
+  verbs=["bite","chomp"],
+  nouns=["apple"],
+  repeat=True,
+  allowed_rooms=["example_room"],
+  success="You take a bite out of the apple."
+)
+
+grapefruit.action(id="BULK_apple_smell",
+  verbs=["smell","sniff"],
+  nouns=["apple"],
+  repeat=True,
+  allowed_rooms=["example_room"],
+  success="The apple smells sweet."
+)
+```
+
+As you can see, bulk action definition is much more efficient when creating lots of simple actions at once.
