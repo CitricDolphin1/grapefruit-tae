@@ -298,6 +298,29 @@ class save:
     saved_room = None
     saved_dead_actions = []
 
+def bulk(noun, rooms, *args):
+    '''Define several simple, repeatable actions associated with a single noun.
+    Use this to quickly fill in non-critical interactions.'''
+    if noun == "":
+        nouns_list = []
+    else:
+        nouns_list = [noun]
+
+    if len(rooms) == 0:
+        id_room = ""
+    else:
+        id_room = f"_{rooms[0]}"
+    for arg in args:
+        verbs = arg[0]
+        message = arg[1]
+        gf.action(id=f"BULK_{noun}_{verbs[0]}{id_room}",
+                  repeat=True,
+                  nouns=nouns_list,
+                  verbs=verbs,
+                  allowed_rooms=rooms,
+                  success=message
+        )
+
 def load(save):
     '''Restores session information from a save object.
     Does NOT handle loading from files directly.
