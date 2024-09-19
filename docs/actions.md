@@ -89,7 +89,7 @@ To do this, simply use the grapefruit.bulk method with the following POSITIONAL 
 
 [["list","of","verbs","goes","here"], "Success message goes here."]
 
-For every argument given, one action will be created with the id of "BULK_{noun}_{first_verb}." It will be repeatable, have no flag or item conditions, and not set any flags or items.
+For every argument given, one action will be created with the id of "BULK_{noun}_{first_verb}\_{first allowed room if any}." It will be repeatable, have no flag or item conditions, and not set any flags or items.
 
 For example, this code using bulk definition:
 
@@ -103,7 +103,7 @@ grapefruit.bulk("apple", ["example_room"],
 ...is equivalent to this code using manual definitions:
 
 ```python
-grapefruit.action(id="BULK_apple_bite",
+grapefruit.action(id="BULK_apple_bite_example_room",
   verbs=["bite","chomp"],
   nouns=["apple"],
   repeat=True,
@@ -111,7 +111,7 @@ grapefruit.action(id="BULK_apple_bite",
   success="You take a bite out of the apple."
 )
 
-grapefruit.action(id="BULK_apple_smell",
+grapefruit.action(id="BULK_apple_smell_example_room",
   verbs=["smell","sniff"],
   nouns=["apple"],
   repeat=True,
