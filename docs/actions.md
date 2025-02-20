@@ -43,7 +43,7 @@ You can choose to only set verbs or only set nouns, but if both are empty, then 
 
 If enforce is True and you have not specified any verbs, then your action will be impossible to trigger!
 
-**need_nouns:** A list of nouns that MUST ALL be in the command for the action to succeed. This is checked only when the action actually runs and is ignored by the parser. If left empty, this will not be checked.
+**need_nouns:** A list of nouns that MUST ALL be in the command for the action to succeed. This is checked only when the action actually runs and is mostly ignored by the parser. If left empty, this will not be checked.
 
 **need_items:** A list of items (strings) that the player must have in their inventory to trigger the action.
 
