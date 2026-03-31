@@ -327,7 +327,7 @@ def load(save):
     If you need multi-session persistence, serialize and deserialize the save object using e.g. pickle, and instantiate it before using this function.'''
     gf.inventory = save.saved_inventory
     gf.flags = save.saved_flags
-    gf.current_room = gf.saved_room
+    gf.current_room = save.saved_room
     gf.dead_actions = save.saved_dead_actions
     return
 
